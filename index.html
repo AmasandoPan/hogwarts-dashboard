@@ -1,11 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hogwarts Dashboard</title>
-</head>
-<body>
-    
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .img-table {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 60%;
+      }
+      #modal-img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <div class="container my-5">
+      <h1 class="text-center mb-4">Panel Administrativo de Hogwarts</h1>
+
+      <div class="table-responsive bg-white p-3 shadow-sm rounded">
+        <table class="table table-hover border">
+          <thead class="table-dark">
+            <tr>
+              <th>Foto</th>
+              <th>Nombre</th>
+              <th>Casa</th>
+              <th>Especie</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-personajes"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="modal fade" id="charModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-nombre">Nombre del Personaje</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-5">
+                <img id="modal-img" src="" alt="Foto" class="img-fluid" />
+              </div>
+              <div class="col-md-7">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <strong>Actor:</strong> <span id="modal-actor"></span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Nacimiento:</strong> <span id="modal-fecha"></span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Patronus:</strong> <span id="modal-patronus"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>
